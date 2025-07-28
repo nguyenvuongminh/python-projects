@@ -1,0 +1,22 @@
+# Right-turn function
+def turn_right():
+    for i in range (0,3):
+        turn_left()
+
+while not at_goal():
+    if wall_on_right():
+        if front_is_clear():
+            move()
+        else:
+            turn_left() # From observation, this will make
+            # Reeborg tread the right wall
+    elif right_is_clear():
+        if wall_in_front():
+            turn_right()
+            if front_is_clear(): # Basically, there are two
+            # (front-clear and right-clear) scenarios, which requires
+            # 2 seperate set of actions. This eliminates one.
+                move()
+        else:
+            turn_right()
+            move()
