@@ -1,0 +1,26 @@
+def turn_right():
+    for i in range (0,3):
+        turn_left()
+
+# Move when there's wall on the right & the front is clear
+def tread():
+    while wall_on_right() and front_is_clear():
+        move()
+
+# Jumping, stopping at the original direction
+def jump():
+    turn_left()
+    tread()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    tread()
+    turn_left()
+
+# Overall loop
+while at_goal() == False:
+    if not wall_in_front():
+        move()
+    else:
+        jump()
