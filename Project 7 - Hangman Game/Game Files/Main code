@@ -1,0 +1,39 @@
+### Importing files
+import hangman_art
+import hangman_words
+import random
+
+### Opening banner & introduction
+print(hangman_art.logo)
+print('Welcome to hangman!')
+
+# Selecting a word, generate blanks & an array for the word (for comparing purpose)
+word_list = hangman_words.word_list
+word_index = random.randint(0,len(word_list)-1)
+word = word_list[word_index] # The word
+
+word_array = list(word) # Word array
+
+blank = [] # Generating the blanks
+for i in range(0,len(word)-1):
+    blank.append('_')
+
+life_count = 7
+
+# The loop
+while life_count > 0:
+    guess = input('Please guess a letter:\n')
+    # Comparing the guessed letter to the word's letters
+    for i in word_array:
+        if guess == i:
+            index = word_array.index(i)
+            blank[index] = guess
+
+    if answer == 'correct':
+        print('Correct guess.\n')
+        if life_count < 7:
+            print(hangman_art.stages[life_count - 1])
+    else:
+        print('Wrong guess.\n')
+        print(hangman_art.stages[life_count - 1])
+        print(f'Remaining lives: {life_count}/7')
