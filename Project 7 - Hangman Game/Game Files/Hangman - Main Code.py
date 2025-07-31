@@ -1,3 +1,10 @@
+### NOTES ###
+# Description: This is a hangman program. This version currently lacks the ability to differentiate similar guesses, but
+# they still work fine.
+# Disclaimer: In order for this code to work, you must download it alongside the imported files into a single folder.
+# Written by Minh Nguyen, July 30, 2025.
+### *****************************************************************************************************************
+
 ### Importing files
 import hangman_art
 import hangman_words
@@ -19,8 +26,11 @@ for i in range(0,len(word)):
     blank.append('_')
 
 ### Printing the blanks
-print(''.join(blank))
+print("Word to guess: " + ''.join(blank))
 life_count = 7
+
+### Storing guessed letter
+guessed_letters = []
 
 ### The loop
 while life_count > 0:
@@ -32,6 +42,18 @@ while life_count > 0:
             index = word_array.index(i) # Since Python counts from 0.
             blank[index] = guess
             answer = 'correct'
+
+    # Similar letter case
+    for i in guessed_letters:
+        if guess == i:
+            answer = 'similar'
+
+    if answer ==  'similar':
+        life_count -= 1
+        print(hangman_art.stages[life_count])
+        print('This letter has already been guessed.\n')
+        print(f'Remaining lives: {life_count}/7')
+        print(''.join(blank))
 
     # Correct case
     if answer == 'correct':
@@ -48,6 +70,9 @@ while life_count > 0:
         print('Wrong guess.\n')
         print(f'Remaining lives: {life_count}/7')
         print(''.join(blank))
+
+    # Remembering the guessed letter
+    guessed_letters.append(guess)
 
     # Winning case
     if blank == word_array:
