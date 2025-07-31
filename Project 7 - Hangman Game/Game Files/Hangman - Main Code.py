@@ -1,6 +1,5 @@
 ### NOTES ###
-# Description: This is a hangman program. This version currently lacks the ability to differentiate similar guesses, but
-# they still work fine.
+# Description: This is a hangman program.
 # Disclaimer: In order for this code to work, you must download it alongside the imported files into a single folder.
 # Written by Minh Nguyen, July 30, 2025.
 ### *****************************************************************************************************************
