@@ -2,7 +2,7 @@
 # Description: This code will be able to:
 # - Encrypt a code, with the shifting number be user's input
 # - Decrypt a code, with the shifting number ber the user's input
-# I'll probably code the back-end first.
+# - Future devs: Add user interface, add response for invalid cases.
 # Written by Minh Nguyen, August 1st, 2025.
 ###****************************************************************
 
@@ -50,6 +50,7 @@ while switch == 'ON':
     else:
         print('Thanks for using the tool!')
         switch = 'OFF'
+
 
 
 
