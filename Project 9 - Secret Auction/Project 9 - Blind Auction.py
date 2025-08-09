@@ -25,7 +25,7 @@ while other == 'yes':
     bids[name] = price
 
     if other == 'yes':
-        print('\n'* 20)
+        print('\n'* 100)
     elif other == 'no':
         break
 
@@ -34,7 +34,7 @@ for name in bids:
         highest_bid = bids[name]
         highest_bidder = name
 
-print(f'Congratulation {highest_bidder}! You have won the secret auction!')
+print(f'\nCongratulation {highest_bidder}! You have won the secret auction!')
 
 
 
