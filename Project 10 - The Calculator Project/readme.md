@@ -1,1 +1,1 @@
-
+While Python can seemingly do most of the basic stuff that a regular a calculator can do (and regular calculator aren't that rare), this project allow me to practice with the "Function with Output" concept.
